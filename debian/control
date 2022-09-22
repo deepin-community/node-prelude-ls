@@ -1,0 +1,31 @@
+Source: node-prelude-ls
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               nodejs:native,
+               mocha <!nocheck>,
+               livescript,
+               node-sinon,
+               dh-sequence-nodejs (>= 0.9.71~)
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-prelude-ls
+Vcs-Git: https://salsa.debian.org/js-team/node-prelude-ls.git
+Homepage: https://preludels.com
+Rules-Requires-Root: no
+
+Package: node-prelude-ls
+Architecture: all
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Suggests: livescript
+Description: functionally oriented utility library for Livescript
+ This library is a base library for LiveScript, including tools
+ and basic functions, for instance mathematical basic functions.
+ .
+ LiveScript is a functional programming language that compiles
+ to JavaScript.
+ .
+ Node.js is an event-based server-side JavaScript engine.

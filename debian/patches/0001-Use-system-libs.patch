@@ -1,0 +1,30 @@
+From: Yadd <yadd@debian.org>
+Date: Sun, 3 Oct 2021 12:25:37 +0000
+Subject: Use system libs
+
+Use debian gold standard: use system lib
+
+Forwarded: not-needed
+---
+ Makefile | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index ddb621c..f52233c 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,11 +2,11 @@ default: all
+ 
+ SRC = $(shell find src -name "*.ls" -type f | sort)
+ LIB = $(SRC:src/%.ls=lib/%.js)
+-LS = node_modules/livescript
+-LSC = node_modules/.bin/lsc
++LS = $(shell nodepath livescript)
++LSC = /usr/bin/lsc
+ BROWSERIFY = node_modules/.bin/browserify
+ UGLIFYJS = node_modules/.bin/uglifyjs
+-MOCHA = node_modules/.bin/mocha
++MOCHA = /usr/bin/mocha
+ 
+ lib:
+ 	mkdir -p lib/

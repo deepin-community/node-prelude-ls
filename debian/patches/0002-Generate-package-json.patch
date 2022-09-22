@@ -1,0 +1,24 @@
+From: Yadd <yadd@debian.org>
+Date: Sun, 3 Oct 2021 12:25:37 +0000
+Subject: Generate package json
+
+Regenerated package.json before build
+
+Forwarded: not-needed
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index f52233c..401f01c 100644
+--- a/Makefile
++++ b/Makefile
+@@ -11,7 +11,7 @@ MOCHA = /usr/bin/mocha
+ lib:
+ 	mkdir -p lib/
+ 
+-lib/%.js: src/%.ls lib
++lib/%.js: src/%.ls lib package.json
+ 	$(LSC) --output lib --bare --compile "$<"
+ 
+ browser:
